@@ -1,0 +1,25 @@
+# !/bin/bash
+#用户登录验证脚本
+#lin 2018-09-18
+username="lgz"
+userpass="233"
+i=0
+while [ true ]
+do
+	if [ $i -lt 3 ];then
+		read -p "输入用户名: " iusername
+		read -p "输入密码： "  iuserpass
+			if [ $iusername = $username -a $iuserpass = userpass ];then
+				echo "登录成功"
+				break
+				else
+					echo "输入错误，请重新输入"
+					i=$[$i+1]
+			fi
+	else
+		echo "请5秒后再输入"
+		sleep
+		let i=0
+	fi
+done
+					
